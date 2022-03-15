@@ -1,6 +1,9 @@
 name: 'MonkeyType Badge - Readme'
 author: Quang Phan
 description: 'Update monkeytype personal best in your Readme'
+branding:
+  icon: award
+  color: yellow
 inputs:
   github_token:
     description: 'Github access token with Repo scope'
