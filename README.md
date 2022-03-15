@@ -91,7 +91,7 @@ Put the following at the bottom of your README. This is a default badge that wil
 [monkeytype.badge]: https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fmonkeytype-badge-vhd5lan7mmhz.runkit.sh
 ```
 
-You can display this badge somewhere in your readme as below, which will render similar to those in the [Demo](#demo) section.
+You can display this badge somewhere in your readme as below
 
 ![monkeytype.badge.default]
 
@@ -141,8 +141,11 @@ on:
 
 jobs:
   update-readme:
-    name: Update this repo's README
+    name: Update README
     runs-on: ubuntu-latest
+    # it shouldn't take longer than a few minutes
+    # but leave a timeout here in case monkeytype server hangs
+    timeout-minutes: 10
     steps:
       - uses: vnphanquang/monkeytype-readme@main
         with:
