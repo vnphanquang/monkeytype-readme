@@ -26,7 +26,8 @@ jest.mock('@actions/github', () => ({
       repos: {
         getReadme: jest.fn(async () => ({
           data: {
-            content,
+            content: Buffer.from(content).toString('base64'),
+            encoding: 'base64',
             path: 'README.md',
             sha: '802992c4220de19a90767f3000a79a31b98d0df7',
           }
@@ -40,14 +41,14 @@ jest.mock('@actions/github', () => ({
 test('Default input should update', async () => {
   const coreInfoSpy = jest.spyOn(core, 'info');
   const newContent = await updateReadme(defaultInput, badgeUrl);
-  expect(coreInfoSpy).toHaveBeenCalledTimes(1);
+  expect(coreInfoSpy).toHaveBeenCalled();
   expect(newContent).toBe(content.replace(REGEX, `[monkeytype.badge]: ${badgeUrl}`));
 });
 
 test('Same content should skip', async () => {
   const coreInfoSpy = jest.spyOn(core, 'info');
   const newContent = await updateReadme(defaultInput, exampleUrl);
-  expect(coreInfoSpy).toHaveBeenCalledTimes(1);
+  expect(coreInfoSpy).toHaveBeenCalled();
   expect(newContent).toBe(content);
 });
 

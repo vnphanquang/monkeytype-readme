@@ -4,13 +4,17 @@ import * as github from '@actions/github';
 import { BadgeResourceDeclarationNotFoundError } from '../error';
 import type { Input } from '../input';
 
-export const REGEX = /\[monkeytype\.badge\].*$/m;
+export const REGEX = /(?<!!)\[monkeytype\.badge\].*$/m;
 
 export async function updateReadme(input: Input, badgeUrl: string) {
   const octokit = github.getOctokit(input.github_token);
   const { repo, owner } = github.context.repo;
+
+  core.info(`Getting README.md content from ${owner}/${repo}`);
   const readme = await octokit.rest.repos.getReadme({ owner, repo });
-  let content = readme.data.content;
+  core.info(readme.data.content);
+  let content = Buffer.from(readme.data.content, readme.data.encoding as BufferEncoding).toString('utf-8');
+
   const newBadgeResource = `[monkeytype.badge]: ${badgeUrl}`;
   const badgeResource = content.match(REGEX)?.[0];
   if (!badgeResource) {

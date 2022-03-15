@@ -98,7 +98,7 @@ You can display this badge somewhere in your readme as below, which will render 
 ![!monkeytype.badge]
 
 <!-- For clickable image that links to monkeytype website -->
-[![!monkeytype.badge]](https://monkeytype.com/)
+[![monkeytype.badge]](https://monkeytype.com/)
 ```
 
 #### 2. Monkeytype API Key
