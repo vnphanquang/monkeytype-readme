@@ -14,6 +14,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.13.0
   '@typescript-eslint/parser': ^5.13.0
   '@vercel/ncc': ^0.33.3
+  conventional-changelog-conventionalcommits: ^4.6.3
   dotenv: ^16.0.0
   eslint: ^8.10.0
   eslint-import-resolver-alias: ^1.1.2
@@ -45,6 +46,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.15.0_f2c49ce7d0e93ebcfdb4b7d25b131b28
   '@typescript-eslint/parser': 5.15.0_eslint@8.11.0+typescript@4.6.2
   '@vercel/ncc': 0.33.3
+  conventional-changelog-conventionalcommits: 4.6.3
   dotenv: 16.0.0
   eslint: 8.11.0
   eslint-import-resolver-alias: 1.1.2_eslint-plugin-import@2.25.4
@@ -1648,6 +1650,15 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       compare-func: 2.0.0
+      q: 1.5.1
+    dev: true
+
+  /conventional-changelog-conventionalcommits/4.6.3:
+    resolution: {integrity: sha512-LTTQV4fwOM4oLPad317V/QNQ1FY4Hju5qeBIM1uTHbrnCE+Eg4CdRZ3gO2pUeR+tzWdp80M2j3qFFEDWVqOV4g==}
+    engines: {node: '>=10'}
+    dependencies:
+      compare-func: 2.0.0
+      lodash: 4.17.21
       q: 1.5.1
     dev: true
 
