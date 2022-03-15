@@ -44,7 +44,7 @@
 </details>
 
 <details open>
-  <summary>Icon variant: show / hide</summary>
+  <summary>Icon variants: show / hide</summary>
 
 | icon | demo |
 | --- | --- |
