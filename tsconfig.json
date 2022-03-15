@@ -1,0 +1,18 @@
+{
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts"
+  ],
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "target": "ES6",
+    "types": ["node", "jest"],
+    "incremental": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "outDir": "build",
+    "esModuleInterop": true,
+    "paths": {}
+  }
+}

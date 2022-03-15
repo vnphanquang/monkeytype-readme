@@ -1,0 +1,45 @@
+name: Codecov
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "**.ts"
+      - ".github/workflows/codecov.yaml"
+      - "jest.config.js"
+
+env:
+  MONKEYTYPE_API_KEY: ${{ secrets.MONKEYTYPE_API_KEY }}
+
+jobs:
+  Codecov:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.1
+        with:
+          version: 6.32.2
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        continue-on-error: false
+      - name: Test
+        run: pnpm test
+        continue-on-error: false
+      - name: Update code coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ./coverage
+          flags: unittests
+          verbose: true
+          fail_ci_if_error: true

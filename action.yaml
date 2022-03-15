@@ -1,0 +1,37 @@
+name: 'MonkeyType Badge - Readme'
+author: Quang Phan
+description: 'Update monkeytype personal best in your Readme'
+inputs:
+  github_token:
+    description: 'Github access token with Repo scope'
+    default: ${{ github.token }}
+    required: true
+  monkeytype_api_key:
+    description: 'Your monkeytype api key'
+    required: true
+  mode:
+    description: 'monkeytype mode to get the stats. Ex: time, words'
+    default: 'time'
+    required: false
+  mode2:
+    description: 'monkeytype sub mode to get the stats. Ex: 60'
+    default: '30'
+    required: false
+  style:
+    description: 'The shields.io style to use'
+    default: 'flat'
+    required: false
+  logoVariant:
+    description: 'The monkeytype logo svg variant to use (one | two)'
+    default: 'one'
+    required: false
+  label:
+    description: 'The shields.io label to use'
+    default: 'monkeytype'
+    required: false
+outputs:
+  badge_url:
+    description: 'The shields.io badge url'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
