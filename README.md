@@ -98,7 +98,7 @@ You can display this badge somewhere in your readme as below, which will render 
 ![!monkeytype.badge]
 
 <!-- For clickable image that links to monkeytype website -->
-[![!monkeytype.badge]][https://monkeytype.com/]
+[![!monkeytype.badge]](https://monkeytype.com/)
 ```
 
 #### 2. Monkeytype API Key
@@ -135,7 +135,7 @@ on:
   workflow_dispatch:
   schedule:
     # Runs at 00:00 each sunday
-    - cron: "0 0 * * 0"
+    - cron: '0 0 * * 0'
 
 jobs:
   update-readme:
@@ -145,7 +145,7 @@ jobs:
       - uses: vnphanquang/monkeytype-readme@main
         with:
           # required:
-          monkeytype_api_key: 'your_ape_key'
+          monkeytype_api_key: ${{ secrets.MONKEYTYPE_API_KEY }}
           mode: 'time'
           mode2: '30'
           # not required with default:
