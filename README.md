@@ -168,13 +168,13 @@ https://monkeytype-badge-vhd5lan7mmhz.runkit.sh
 <details open>
   <summary>Query params: show / hide</summary>
 
-</details>
-
 | name | required | default | description |
 | --- | --- | --- | --- |
 | `message` | no | `calculating` | message to display on the badge, usually something like '120wpm' |
 | `logoVariant` | no | `one` | the logo variant to use, see [Demo](#demo). Accepts only the string `one` or `two` |
 | `label` | no | `monkeytype` | the text next to the icon |
+
+</details>
 
 <br />
 <div align="center">
