@@ -396,14 +396,15 @@ exports.updateReadme = exports.REGEX = void 0;
 const core = __importStar(__nccwpck_require__(3031));
 const github = __importStar(__nccwpck_require__(982));
 const error_1 = __nccwpck_require__(1906);
-exports.REGEX = /\[monkeytype\.badge\].*$/m;
+exports.REGEX = /(?<!!)\[monkeytype\.badge\].*$/m;
 function updateReadme(input, badgeUrl) {
     var _a;
     return __awaiter(this, void 0, void 0, function* () {
         const octokit = github.getOctokit(input.github_token);
         const { repo, owner } = github.context.repo;
+        core.info(`Getting README content from ${owner}/${repo}`);
         const readme = yield octokit.rest.repos.getReadme({ owner, repo });
-        let content = readme.data.content;
+        let content = Buffer.from(readme.data.content, readme.data.encoding).toString('utf-8');
         const newBadgeResource = `[monkeytype.badge]: ${badgeUrl}`;
         const badgeResource = (_a = content.match(exports.REGEX)) === null || _a === void 0 ? void 0 : _a[0];
         if (!badgeResource) {
@@ -414,6 +415,8 @@ function updateReadme(input, badgeUrl) {
         }
         else {
             content = content.replace(exports.REGEX, `[monkeytype.badge]: ${badgeUrl}`);
+            core.info('Committing new change to README...');
+            core.info('Updating: ' + badgeResource + '\n' + 'With: ' + newBadgeResource);
             octokit.rest.repos.createOrUpdateFileContents({
                 owner,
                 repo,

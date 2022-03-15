@@ -10,9 +10,8 @@ export async function updateReadme(input: Input, badgeUrl: string) {
   const octokit = github.getOctokit(input.github_token);
   const { repo, owner } = github.context.repo;
 
-  core.info(`Getting README.md content from ${owner}/${repo}`);
+  core.info(`Getting README content from ${owner}/${repo}`);
   const readme = await octokit.rest.repos.getReadme({ owner, repo });
-  core.info(readme.data.content);
   let content = Buffer.from(readme.data.content, readme.data.encoding as BufferEncoding).toString('utf-8');
 
   const newBadgeResource = `[monkeytype.badge]: ${badgeUrl}`;
@@ -20,10 +19,13 @@ export async function updateReadme(input: Input, badgeUrl: string) {
   if (!badgeResource) {
     throw new BadgeResourceDeclarationNotFoundError('No monkeytype.badge resource declaration (`[monkeytype.badge]: ...`) was found in README.md. Please check documentation for setup instruction.');
   }
+
   if (badgeResource.includes(newBadgeResource)) {
     core.info('Badge content is still the same. Skipping update...');
   } else {
     content = content.replace(REGEX, `[monkeytype.badge]: ${badgeUrl}`);
+    core.info('Committing new change to README...');
+    core.info('Updating: ' + badgeResource + '\n' + 'With: ' + newBadgeResource);
     octokit.rest.repos.createOrUpdateFileContents({
       owner,
       repo,
