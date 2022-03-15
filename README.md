@@ -86,7 +86,7 @@ This project's strategy relies on [shields.io endpoint api][shields.io.endpoint]
 Put the following at the bottom of your README. This is a default badge that will get updated by the github action...
 
 ```markdown
-[monkeytype.badge.default]: https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fmonkeytype-badge-vhd5lan7mmhz.runkit.sh
+[monkeytype.badge]: https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fmonkeytype-badge-vhd5lan7mmhz.runkit.sh
 ```
 
 You can display this badge somewhere in your readme as below, which will render similar to those in the [Demo](#demo) section.
