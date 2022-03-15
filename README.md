@@ -31,6 +31,8 @@
 
 ## Demo
 
+(Sometimes it takes a bit of time or some browser refresh for the badges below to all appear. If someone knows why let me know ^_^)
+
 <details open>
   <summary>Style variants: show / hide</summary>
 
