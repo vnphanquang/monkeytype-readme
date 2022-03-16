@@ -25,6 +25,7 @@
       - [1. Readme Resource Declaration](#1-readme-resource-declaration)
       - [2. Monkeytype API Key](#2-monkeytype-api-key)
   - [Github Action Workflow](#github-action-workflow)
+    - [Edge Cases](#edge-cases)
   - [Endpoint Documentation](#endpoint-documentation)
 
 </details>
@@ -144,7 +145,7 @@ jobs:
     name: Update README
     runs-on: ubuntu-latest
     # it shouldn't take longer than a few minutes
-    # but leave a timeout here in case monkeytype server hangs
+    # but leave a timeout here in case request hangs
     timeout-minutes: 10
     steps:
       - uses: vnphanquang/monkeytype-readme@main
@@ -154,13 +155,24 @@ jobs:
           mode: 'time'
           mode2: '30'
           # not required with default:
-          style: 'flat'
+          style: 'flat' # option from shields.io
           logoVariant: 'one'
           label: 'monkeytype'
   # outputs badge_url should you need to use that in later steps
 ```
 
 </details>
+
+### Edge Cases
+
+Some edge cases to expect:
+
+- If your personal best stays the same at the time the action runs, no update should be made to README (the action still succeeds but it should have skipped that step).
+- If an invalid `mode` / `mode2` is passed, the action should fail with a `MonkeytypePersonalBestNotFoundError` error.
+- In case monkeytype server is down, the action should also fail.
+- In case runkit server is down, a generic error badge from `shields.io` should be displayed.
+  ![invalid shields.io endpoint url](https://img.shields.io/endpoint?url=something%20invalid)
+- If any of the above server hangs, the action should timeout (provided you include a `timeout-minutes` input in the action).
 
 ## Endpoint Documentation
 

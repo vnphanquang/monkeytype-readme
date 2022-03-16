@@ -6,7 +6,7 @@ export class BadgeResourceDeclarationNotFoundError extends Error {
 }
 
 export class MonkeytypePersonalBestNotFoundError extends Error {
-  constructor(message?: string) {
+  constructor(message ='MonkeytypePersonalBestNotFoundError') {
     super(message);
     this.name = 'MonkeytypePersonalBestNotFoundError';
   }
