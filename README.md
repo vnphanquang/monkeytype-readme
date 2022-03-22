@@ -68,7 +68,7 @@ This project's strategy relies on [shields.io endpoint api][shields.io.endpoint]
 1. Edit this endpoint to your liking:
 
     ```
-    https://monkeytype-badge-vhd5lan7mmhz.runkit.sh?message=...&label=...&logoVarient=...
+    https://monkeytype-badge-vhd5lan7mmhz.runkit.sh?message=...&label=...&logoVariant=...
     ```
 
     See [Endpoint Documentation](#endpoint-documentation) for more details about the query params.
