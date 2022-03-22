@@ -174,6 +174,8 @@ Some edge cases to expect:
   ![invalid shields.io endpoint url](https://img.shields.io/endpoint?url=something%20invalid)
 - If any of the above server hangs, the action should timeout (provided you include a `timeout-minutes` input in the action).
 
+If you encounter other edge cases not covered above, please [open an issue][github.issues] to let me know. Thanks a lot!
+
 ## Endpoint Documentation
 
 See [the code on runkit][runkit]. The endpoint is:
@@ -230,6 +232,8 @@ https://monkeytype-badge-vhd5lan7mmhz.runkit.sh
 
 [semantic-release]: https://github.com/semantic-release/semantic-release
 [semantic-release.badge]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+
+[github.issues]: https://github.com/vnphanquang/monkeytype-readme/issues?q=
 
 [github.release.badge]: https://img.shields.io/github/v/release/vnphanquang/monkeytype-readme
 [github.release]: https://github.com/vnphanquang/monkeytype-readme/releases
