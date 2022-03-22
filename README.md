@@ -18,6 +18,7 @@
 
 - [Monkeytype Stats in Github Readme](#monkeytype-stats-in-github-readme)
   - [Table of Contents](#table-of-contents)
+  - [Changelog](#changelog)
   - [Demo](#demo)
   - [Preparation](#preparation)
     - [Static Usage](#static-usage)
@@ -27,8 +28,11 @@
   - [Github Action Workflow](#github-action-workflow)
     - [Edge Cases](#edge-cases)
   - [Endpoint Documentation](#endpoint-documentation)
+  - [Contributing](#contributing)
 
 </details>
+
+## [Changelog][github.changelog]
 
 ## Demo
 
@@ -195,6 +199,10 @@ https://monkeytype-badge-vhd5lan7mmhz.runkit.sh
 
 </details>
 
+## Contributing
+
+[Read Contribution Guide][github.contributing]
+
 <br />
 <div align="center">
 
@@ -233,6 +241,8 @@ https://monkeytype-badge-vhd5lan7mmhz.runkit.sh
 [semantic-release]: https://github.com/semantic-release/semantic-release
 [semantic-release.badge]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 
+[github.changelog]: ./CHANGELOG
+[github.contributing]: ./CONTRIBUTING
 [github.issues]: https://github.com/vnphanquang/monkeytype-readme/issues?q=
 
 [github.release.badge]: https://img.shields.io/github/v/release/vnphanquang/monkeytype-readme
