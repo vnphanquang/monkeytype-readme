@@ -29,6 +29,9 @@ jobs:
         include:
           - can-fail: false
     steps:
+      - name: Public IP
+        id: ip
+        uses: haythem/public-ip@v1.2
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Setup pnpm
