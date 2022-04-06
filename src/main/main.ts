@@ -19,7 +19,7 @@ export async function main() {
 
     return badgeUrl;
   } catch (error) {
-    core.setFailed(error.message);
+    core.setFailed(error);
     return null;
   }
 }

@@ -38,18 +38,17 @@ const node_fetch_1 = __importDefault(__nccwpck_require__(3600));
 const error_1 = __nccwpck_require__(1906);
 const badge_constants_1 = __nccwpck_require__(4102);
 function getWpm(input) {
-    var _a;
     return __awaiter(this, void 0, void 0, function* () {
         const { monkeytype_api_key, mode, mode2 } = input;
         const monkeytypeUrl = `${badge_constants_1.MONKEYTYPE_API_URL}?mode=${mode}&mode2=${mode2}`;
         const response = yield (0, node_fetch_1.default)(monkeytypeUrl, {
             headers: {
                 'Authorization': 'ApeKey ' + monkeytype_api_key,
-            }
+            },
         });
+        const { data } = yield response.json();
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const json = yield response.json();
-        const wpm = (_a = json.data) === null || _a === void 0 ? void 0 : _a[0].wpm;
+        const wpm = data === null || data === void 0 ? void 0 : data[0].wpm;
         if (!wpm)
             throw new error_1.MonkeytypePersonalBestNotFoundError('No personal best found with provided mode');
         return Math.round(wpm);
@@ -114,7 +113,7 @@ class BadgeResourceDeclarationNotFoundError extends Error {
 }
 exports.BadgeResourceDeclarationNotFoundError = BadgeResourceDeclarationNotFoundError;
 class MonkeytypePersonalBestNotFoundError extends Error {
-    constructor(message) {
+    constructor(message = 'MonkeytypePersonalBestNotFoundError') {
         super(message);
         this.name = 'MonkeytypePersonalBestNotFoundError';
     }
@@ -319,7 +318,7 @@ function main() {
             return badgeUrl;
         }
         catch (error) {
-            core.setFailed(error.message);
+            core.setFailed(error);
             return null;
         }
     });
@@ -394,7 +393,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.updateReadme = exports.REGEX = void 0;
 const core = __importStar(__nccwpck_require__(3031));
-const github = __importStar(__nccwpck_require__(982));
+const github = __importStar(__nccwpck_require__(2737));
 const error_1 = __nccwpck_require__(1906);
 exports.REGEX = /(?<!!)\[monkeytype\.badge\].*$/m;
 function updateReadme(input, badgeUrl) {
@@ -1037,7 +1036,7 @@ exports.toCommandProperties = toCommandProperties;
 
 /***/ }),
 
-/***/ 1892:
+/***/ 8905:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -1098,7 +1097,7 @@ exports.Context = Context;
 
 /***/ }),
 
-/***/ 982:
+/***/ 2737:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -1124,8 +1123,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getOctokit = exports.context = void 0;
-const Context = __importStar(__nccwpck_require__(1892));
-const utils_1 = __nccwpck_require__(8710);
+const Context = __importStar(__nccwpck_require__(8905));
+const utils_1 = __nccwpck_require__(603);
 exports.context = new Context.Context();
 /**
  * Returns a hydrated octokit ready to use for GitHub Actions
@@ -1141,7 +1140,7 @@ exports.getOctokit = getOctokit;
 
 /***/ }),
 
-/***/ 255:
+/***/ 4117:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -1191,7 +1190,7 @@ exports.getApiBaseUrl = getApiBaseUrl;
 
 /***/ }),
 
-/***/ 8710:
+/***/ 603:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -1217,8 +1216,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getOctokitOptions = exports.GitHub = exports.context = void 0;
-const Context = __importStar(__nccwpck_require__(1892));
-const Utils = __importStar(__nccwpck_require__(255));
+const Context = __importStar(__nccwpck_require__(8905));
+const Utils = __importStar(__nccwpck_require__(4117));
 // octokit + plugins
 const core_1 = __nccwpck_require__(2309);
 const plugin_rest_endpoint_methods_1 = __nccwpck_require__(3669);
