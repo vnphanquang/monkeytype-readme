@@ -1,10 +1,10 @@
-# Contributing to [roullector]
+# Contributing to [monkeytype-readme][github]
 
-Thank you for stopping by. [roullector] welcomes and appreciates your contribution
+Thank you for stopping by. [monkeytype-readme][github] welcomes and appreciates your contribution
 
 ## Reporting Issues
 
-Before opening a new issue, [first search for existing issues][roullector.issues] to avoid duplications.
+Before opening a new issue, [first search for existing issues][github.issues] to avoid duplications.
 
 When you start working on an issue, make sure you are asked to be assigned to it.
 
@@ -18,13 +18,13 @@ Please include as much details as possible:
 
 ### Feature Request
 
-If you have an idea and don't know where to start yet, consider [opening a discussion][roullector.discussions] first.
+If you have an idea and don't know where to start yet, consider [opening a discussion][github.discussions] first.
 
-If you have a PR ready as your proposed implementation, you can [create an issue][roullector.issues] and a PR that references it.
+If you have a PR ready as your proposed implementation, you can [create an issue][github.issues] and a PR that references it.
 
 ## Pull Requests
 
-Each pull request should [reference an open issue][roullector.issues.open] unless the change is very something simple such as a typo.
+Each pull request should [reference an open issue][github.issues.open] unless the change is very something simple such as a typo.
 
 ## Consistent Code Style
 
@@ -50,7 +50,7 @@ See [package.json] for more details
 [github]: https://github.com/vnphanquang/monkeytype-readme
 [github.issues]: https://github.com/vnphanquang/monkeytype-readme/issues?q=
 [github.issues.open]: https://github.com/vnphanquang/monkeytype-readme/issues?q=is%3Aissue+is%3Aopen
-[github.discussions]: https://github.com/saadeghi/daisyui/discussions
+[github.discussions]: https://github.com/vnphanquang/monkeytype-readme/discussions
 [conventionalcommits]: https://www.conventionalcommits.org/en/v1.0.0/
 [semanticrelease]: https://github.com/semantic-release/semantic-release
 [prettier]: https://prettier.io/
