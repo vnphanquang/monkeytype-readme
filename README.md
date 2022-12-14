@@ -110,7 +110,7 @@ You can display this badge somewhere in your readme as below
 
 #### 2. Monkeytype API Key
 
-Go to [monkeytype.settings], search for the `ape key` section, then generate and save an API Key somewhere for the next step
+Go to [monkeytype.settings], search for the `ape key` section, then generate and save an API Key somewhere for the next step. Remember to activate your key at the end to (might be a little checkbox at the left).
 
 ![monkeytype.settings.ape-key]
 
