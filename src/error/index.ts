@@ -11,3 +11,10 @@ export class MonkeytypePersonalBestNotFoundError extends Error {
     this.name = 'MonkeytypePersonalBestNotFoundError';
   }
 }
+
+export class MonkeytypeApiKeyNotFoundError extends Error {
+  constructor(message ='MonkeytypeApiKeyNotFoundError') {
+    super(message);
+    this.name = 'MonkeytypeApiKeyNotFoundError';
+  }
+}

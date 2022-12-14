@@ -27,7 +27,7 @@ jest.mock('../readme/readme', () => ({
   updateReadme: jest.fn(() => ''),
 }));
 
-test('main sucess flow', async () => {
+test('main success flow', async () => {
   const returned = await main();
   expect(returned).toBe(url);
 });
